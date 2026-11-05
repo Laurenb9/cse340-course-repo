@@ -43,7 +43,7 @@ app.get('/organizations', async (req, res) => {
     res.render('organizations', { title, organizations });
 });
 
-app.get('/organizations', async (req, res) => {
+app.get('/projects', async (req, res) => {
     const Projects = await getAllProjects();  
     const title = 'Upcoming Service Projects';
 });
