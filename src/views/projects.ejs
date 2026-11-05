@@ -2,9 +2,14 @@
 <main>
     <h1><%= title %></h1>
     <h2>Upcoming Service Projects</h2>
-<ul>
-    <% projects.forEach(project => { %>
-                <% }); %>
-</ul>
+    
+    <ul>
+        <% projects.forEach(project => { %>
+            <li>
+                <strong><%= project.title %></strong> - <%= project.location %> (<%= project.date.toISOString().split('T')[0] %>)
+                <p><%= project.description %></p>
+            </li>
+        <% }) %>
+    </ul>
 </main>
 <%- include('partials/footer') %>
