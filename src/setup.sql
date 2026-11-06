@@ -119,3 +119,101 @@ VALUES
  'Collection and distribution of clothing, school supplies, and essential items for families in need.',
  'Armenia, Colombia',
  '2026-12-21');
+
+--Categories N:M
+CREATE TABLE categories (
+	category_id INT PRIMARY KEY,
+	category_name VARCHAR (100) NOT NULL
+);
+
+INSERT INTO categories (
+    category_id,
+	category_name
+)
+VALUES
+(1, 'Environmental'),
+(2, 'Educational'),
+(3, 'Community Service'),
+(4, 'Health and Wellness');
+
+--Junction Table
+CREATE TABLE service_project_categories (
+	project_id INT NOT NULL,
+	category_id INT NOT NULL,
+	PRIMARY KEY (project_id, category_id),
+	FOREIGN KEY (project_id) REFERENCES projects (project_id),
+	FOREIGN KEY (category_id) REFERENCES categories (category_id)
+);
+
+-- Insert Asociaciones 
+INSERT INTO service_project_categories (
+	project_id,
+	category_id
+)
+VALUES
+--BrightFuture Builders
+(1, 2),
+(1, 3),
+
+(2, 1),
+(2, 3),
+
+(3, 3),
+(3, 4),
+
+(4, 3),
+(4, 4),
+
+(5, 2),
+(5, 3),
+
+-- GreenHarvest Growers
+(6, 1),
+(6, 2),
+
+(7, 1),
+(7, 2),
+
+(8, 1),
+(8, 2),
+
+(9, 1),
+(9, 3),
+
+(10, 1),
+(10, 2),
+(10, 4),
+
+-- UnityServe Volunteers
+(11, 3),
+(11, 4),
+
+(12, 3),
+(12, 4),
+
+(13, 1),
+(13, 3),
+
+(14, 2),
+(14, 3),
+
+(15, 3);
+
+--Info recovery
+SELECT
+    projects.project_id,
+    projects.title,
+    categories.category_id,
+    categories.category_name
+
+FROM projects
+
+INNER JOIN service_project_categories
+
+ON projects.project_id = service_project_categories.project_id
+
+INNER JOIN categories
+
+ON service_project_categories.category_id = categories.category_id
+
+ORDER BY projects.project_id, categories.category_id;
