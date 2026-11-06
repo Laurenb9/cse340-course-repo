@@ -6,10 +6,8 @@
         <% categories.forEach(category => { %>
             <li>
                 <h3>
-                    <strong><%= categories.title %></strong>
+                    <strong><%= category.category_name %></strong>
                 </h3>
-                <p><%= project.title %></p>
-                <br><p><%= project.description %></p>
             </li>
         <% }) %>
     </ul>
