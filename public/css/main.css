@@ -67,6 +67,27 @@ nav a:hover {
     color: #FFFFFF;
 }
 
+/* Category Links */
+
+main li:has(.category-link) {
+    padding: 0;
+    transition: var(--transition);
+}
+
+.category-link {
+    display: block;
+    padding: 1rem 1.25rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.category-link:hover {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+    border-radius: var(--border-radius);
+}
+
 /*Main content*/
 main {
     flex: 1;
@@ -101,6 +122,24 @@ p {
     color: var(--text-primary);
 }
 
+/* Inline Links */
+
+main p a,
+main h2 a,
+main h3 a,
+main > a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+main p a:hover,
+main h2 a:hover,
+main h3 a:hover,
+main > a:hover {
+    color: var(--accent-color);
+}
+
 /*Listas de Contenido General (Información estática)*/
 main ul {
     list-style: none;
@@ -116,6 +155,31 @@ main li {
     border-radius: var(--border-radius);
     border: 1px solid #E6E2DA;
 
+}
+
+/* General Links */
+
+main a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    color: var(--accent-color);
+}
+
+
+/* Organization and Project Links */
+
+main li:has(> a[href^="/project/"]),
+main li:has(> a[href^="/organization/"]) {
+    transition: background-color 0.3s ease;
+}
+
+main li:has(> a[href^="/project/"]):hover,
+main li:has(> a[href^="/organization/"]):hover {
+    background-color: #EAE8DF;
 }
 
 /* Estilos específicos para imágenes y contenido de organizaciones*/
