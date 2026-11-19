@@ -4,21 +4,37 @@
     <h1><%= title %></h1>
     <h2>Upcoming Service Projects</h2>
 
-        <ul>
-            <% projects.forEach(project => { %>
-                <li>
-                    <a href="/project/<%= project.project_id %>"><strong><%= project.title %></strong></a>
-                    <p>
-                        Partner Organization:
-                        <a href="/organization/<%= project.organization_id %>"><%= project.organization_name %></a>
-                    </p>
-                    <p><%= project.location %></p>
-                    <p><%= project.date.toISOString().split('T')[0] %></p>
-                    <p><%= project.description %></p>
-                </li>
-            <% }) %>
-        </ul>
-    <p><a href="/new-project">Add a New Service Project</a></p>
+<ul class="project-list">
+    <% projects.forEach(project => { %>
+        <li class="project-card">
+
+            <a class="project-title" href="/project/<%= project.project_id %>">
+                <strong><%= project.title %></strong>
+            </a>
+
+            <p>
+                <strong>Partner Organization:</strong>
+                <a href="/organization/<%= project.organization_id %>">
+                    <%= project.organization_name %>
+                </a>
+            </p>
+
+            <p>
+                <strong>Location:</strong> <%= project.location %>
+            </p>
+
+            <p>
+                <strong>Date:</strong> <%= project.date.toISOString().split('T')[0] %>
+            </p>
+
+            <p>
+                <strong>Description:</strong> <%= project.description %>
+            </p>
+
+        </li>
+    <% }) %>
+</ul>
+    <p><a class="action-button" href="/new-project">Add a New Service Project</a></p>
 </main>
 
 <%- include('partials/footer') %>

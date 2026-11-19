@@ -5,9 +5,9 @@
     <h2>Assign Categories</h2>
  <form action="/assign-categories/<%= projectId %>" method="POST">
 
-    <div class="form-group">
+    <div class="form-group category-checkbox-list">
       <% categories.forEach(category => { %>
-        <div>
+        <div class="checkbox-option">
           <input
             type="checkbox"
             id="category-<%= category.category_id %>"

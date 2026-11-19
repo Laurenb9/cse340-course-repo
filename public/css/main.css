@@ -195,8 +195,11 @@ main li > a[href^="/organization/"] {
 
 main li:has(> a[href^="/project/"]):hover,
 main li:has(> a[href^="/organization/"]):hover {
-    background-color: #EAE8DF;
-}
+    background-color: #E8EBDD;
+    border-left-color: var(--accent-hover);
+    border-left-width: 4.5px;
+    
+}  
 
 /* Estilos específicos para imágenes y contenido de organizaciones*/
 main li img {
@@ -344,6 +347,10 @@ main p:has(a[href="/new-organization"]) {
     text-align: center;
     margin-top: 2rem;
 }
+main p:has(a[href="/new-project"]) {
+    text-align: center;
+    margin-top: 2rem;
+}
 
 main p a[href="/new-organization"] {
     display: inline-block;
@@ -358,3 +365,191 @@ main p a[href="/new-organization"]:hover {
     color: #FFFFFF;
     background-color: var(--accent-hover); 
 }
+
+/* ================================
+   Action Buttons
+================================ */
+
+.action-button {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    color: #FFFFFF;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.action-button:hover {
+    color: #FFFFFF;
+    background-color: var(--accent-hover);
+}
+
+
+/* ================================
+   Organization Header
+================================ */
+
+.organization-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.organization-header img {
+    max-width: 100px;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: 0;
+}
+
+/* ================================
+   Project Cards - Layout Adjustment
+================================ */
+
+main ul.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+main ul.project-list > li.project-card {
+    padding: 1.5rem 1.75rem;
+    background-color: var(--bg-color);
+    border: 1px solid #E6E2DA;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+main ul.project-list > li.project-card:hover {
+    background-color: #EAE8DF;
+    border-left-color: var(--accent-hover);
+    border-left-width: 4.5px;
+}
+
+/* Project Title */
+
+.project-card .project-title {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.project-card .project-title:hover {
+    color: var(--accent-hover);
+}
+
+/* Project Information */
+
+.project-card p {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+.project-card p:last-child {
+    margin-bottom: 0;
+}
+
+.project-card p strong {
+    color: var(--text-primary);
+}
+
+
+/* ================================
+   Categories Grid
+================================ */
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.categories-grid .category-card {
+    padding: 0;
+    border-left: 4px solid transparent;
+    transition: var(--transition);
+}
+
+/* Categories hover adjustment */
+
+.categories-grid .category-card .category-link:hover {
+    background-color: #E8EBDD;
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+}
+.categories-grid .category-card:hover {
+    border-left-color: var(--accent-hover);
+}
+
+.categories-grid .category-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.categories-grid .category-link h3 {
+    margin: 0;
+}
+
+
+/* ================================
+   Project Categories List
+================================ */
+
+.project-categories {
+    margin: 1rem 0 2rem;
+}
+
+.project-categories li {
+    padding: 0.85rem 1.25rem;
+}
+
+.project-categories a {
+    display: block;
+}
+
+
+/* ================================
+   Assign Categories Form
+================================ */
+
+.category-checkbox-list {
+    gap: 0.85rem;
+}
+
+.category-checkbox-list .checkbox-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-color);
+    border: 1px solid #E6E2DA;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.category-checkbox-list .checkbox-option:hover {
+    border-color: var(--accent-color);
+    background-color: #EAE8DF;
+}
+
+.category-checkbox-list input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    accent-color: var(--accent-color);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.category-checkbox-list label {
+    cursor: pointer;
+    color: var(--text-primary);
+}
+

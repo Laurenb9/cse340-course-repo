@@ -3,8 +3,10 @@
     <h1><%= title %></h1>
 
     <h2><%= organizationDetails.name %></h2> 
-    <p><a href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a></p>
-    <img src="/images/<%= organizationDetails.logo_filename %>" alt="<%= organizationDetails.org_name %> logo">
+    <div class="organization-header">
+        <img src="/images/<%= organizationDetails.logo_filename %>" alt="<%= organizationDetails.org_name %> logo">
+        <a class="action-button" href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a>
+    </div>
 
     <p>Description: <%= organizationDetails.description %></p>
 
