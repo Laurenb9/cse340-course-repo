@@ -18,7 +18,7 @@
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--accent-color);
     color: var(--text-primary);
     line-height: 1.6;
     display: flex;
@@ -174,8 +174,24 @@ main a:hover {
 
 main li:has(> a[href^="/project/"]),
 main li:has(> a[href^="/organization/"]) {
-    transition: background-color 0.3s ease;
+    padding: 0;
+    transition: var(--transition);
 }
+
+/* Full clickable area */
+
+main li > a[href^="/project/"],
+main li > a[href^="/organization/"] {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+/* Hover */
 
 main li:has(> a[href^="/project/"]):hover,
 main li:has(> a[href^="/organization/"]):hover {
@@ -200,4 +216,145 @@ footer {
     font-size: 0.9rem;
     border-top: 1px solid #E6E2DA;
     margin-top: auto;
+}
+
+/* Flash Message Styles */
+
+.alert {
+    max-width: 800px;
+    width: 90%;
+    margin: 1.5rem auto;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+/* Success */
+
+.alert.success {
+    color: var(--accent-hover);
+    background-color: #E8EBDD;
+    border-color: #C5CCAD;
+}
+/* Error */
+
+.alert.error {
+    color: #8B4545;
+    background-color: #F5E5E2;
+    border-color: #E5C5BF;
+}
+
+/* Warning */
+.alert.warning {
+    color: #80652F;
+    background-color: #F5EEDC;
+    border-color: #E8D9B5;
+}
+
+/* Info */
+.alert.info {
+    color: var(--text-primary);
+    background-color: var(--surface-color);
+    border-color: #D8D1C5;
+}
+
+/* Form Styles */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 600px;
+    width: 100%;
+    margin: 1.5rem auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    border: 1px solid #E6E2DA;
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.85;
+}
+
+/* Focus and Hover */
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: var(--accent-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(93, 101, 50, 0.15);
+}
+
+/* Textarea */
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Submit Button */
+
+form button {
+    align-self: center;
+    padding: 0.75rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Add Organization Link */
+
+main p:has(a[href="/new-organization"]) {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+main p a[href="/new-organization"] {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #FFFFFF;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+main p a[href="/new-organization"]:hover {
+    color: #FFFFFF;
+    background-color: var(--accent-hover); 
 }

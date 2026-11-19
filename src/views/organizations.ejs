@@ -5,10 +5,20 @@
         <p>Here are a few of our partner organizations:</p>
         <ul>
 
-            <% organizations.forEach(organization => { %>
-                <li><img src="/images/<%= organization.logo_filename %>" alt="<%= organization.org_name %> logo"><stron.org_name %></strong><a href="/organization/<%= organization.organization_id %>"><%= organization.org_name %></a>: <%= organization.contact_email %></li>
-            <% }); %>
+        <% organizations.forEach(organization => { %>
+            <li>
+                <a href="/organization/<%= organization.organization_id %>">
+                 <img
+                    src="/images/<%= organization.logo_filename %>"
+                    alt="<%= organization.org_name %> logo"
+                 >
+                <strong><%= organization.org_name %></strong>:
+            <%= organization.contact_email %>
+        </a>
+    </li>
+<% }); %>
         </ul>
+        <p><a href="/new-organization">Add a new organization</a></p>
     </main>
 
 <%- include('partials/footer') %>
