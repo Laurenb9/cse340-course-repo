@@ -3,7 +3,6 @@
 <main>
     <h1><%= title %></h1>
     <h2>Project Categories</h2>
-
     <ul class="categories-grid">
         <% categories.forEach(category => { %>
             <li class="category-card">
@@ -15,6 +14,7 @@
             </li>
         <% }) %>
     </ul>
+    <a class="action-button" href="/new-category">Create New Category</a>
 </main>
 
 <%- include('partials/footer') %>

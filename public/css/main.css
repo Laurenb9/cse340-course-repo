@@ -270,7 +270,7 @@ form {
     gap: 1.2rem;
     max-width: 600px;
     width: 100%;
-    margin: 1.5rem auto;
+    margin: 2rem auto 1.5rem;
 }
 
 .form-group {
@@ -373,6 +373,7 @@ main p a[href="/new-organization"]:hover {
 .action-button {
     display: inline-block;
     padding: 0.65rem 1.25rem;
+    margin: 1rem 0;
     color: #FFFFFF;
     background-color: var(--accent-color);
     border-radius: var(--border-radius);
