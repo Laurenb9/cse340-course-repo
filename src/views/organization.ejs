@@ -5,7 +5,9 @@
     <h2><%= organizationDetails.name %></h2> 
     <div class="organization-header">
         <img src="/images/<%= organizationDetails.logo_filename %>" alt="<%= organizationDetails.org_name %> logo">
-        <a class="action-button" href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a>
+        <% if (user && user.role_name === 'admin') { %>
+            <a class="action-button" href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a>
+        <% } %>
     </div>
 
     <p>Description: <%= organizationDetails.description %></p>
